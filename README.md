@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WaveDex Terminal 🌊
 
-## Getting Started
+The Ultimate Conviction Terminal on Solana. High-performance trading tools designed for diamond hands.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+WaveDex is a professional-grade DeFi terminal that emphasizes "Conviction" over luck. It features a unique trading contest engine where users are rewarded for holding duration and volume rather than just raw PnL.
+
+## ✨ Features
+
+- **Conviction Contests**: Participate in trading contests where "diamond handing" is the winning strategy.
+- **Jupiter V6 Integration**: Enterprise-grade swap engine for the best prices across Solana.
+- **Token-Gated Intelligence**: Advanced tools requiring $WAVE token ownership:
+  - **Wallet Tracker & PnL**: Real-time on-chain verification.
+  - **AI Insights**: Proprietary Llama-3-70b engine for behavior analysis.
+  - **Whale Alert**: Monitor large liquidity shifts.
+  - **Volume Bot**: Enterprise-grade liquidity provisioning.
+- **Admin Dashboard**: Secure management of RPCs, private keys, and token listings.
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 15 (App Router), Tailwind CSS, Framer Motion
+- **Backend**: Supabase (Auth, PostgreSQL, Realtime)
+- **Blockchain**: Solana (@solana/web3.js)
+- **APIs**: Jupiter V6, Helius, Dexscreener, Groq (AI)
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js / Bun
+- Solana RPC (QuickNode/Helius)
+- Supabase Project
+
+### Environment Setup
+
+Create a `.env` file in the root:
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+DATABASE_URL=
+
+# Solana
+NEXT_PUBLIC_SOLANA_RPC_URL=
+QUICKNODE_API_KEY=
+HELIUS_API_KEY=
+
+# AI & Trading
+GROQ_API_KEY=
+JUPITER_API_KEY=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun install
+bun run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛡 Security
 
-## Learn More
+Sensitive data (Private Keys, Admin RPCs) is managed exclusively through the encrypted Admin Dashboard and never exposed in client-side code.
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 WaveDex. Professional Grade DeFi.

@@ -19,6 +19,7 @@ WaveDex is a DeFi trading contest platform built on Solana, emphasizing "Convict
 - UI: Professional DeFi terminal look, centered layouts, mobile-responsive.
 - Admin: Simple, link-based navigation (no bulky buttons).
 - Feature: One-click "Feature" functionality with auto-generated Twitter content.
+- **Token Gating**: Premium tools (PnL, AI, Whale Alert, Volume Bot) require holding 100,000 $WAVE tokens.
 
 ## Project Guidelines
 - **Real Execution**: All trading components (Swap, Volume Bot) use real on-chain APIs (Jupiter V6).
