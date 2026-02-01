@@ -14,7 +14,12 @@
 /coverage
 
 .orchids
+# local env files
+.env*.local
 .env
+.env.development
+.env.test
+.env.production
 
 # next.js
 /.next/
