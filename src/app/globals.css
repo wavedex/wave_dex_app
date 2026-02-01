@@ -1,0 +1,231 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-wave-deep: #000814;
+  --color-wave-blue: #001d3d;
+  --color-wave-mid: #003566;
+  --color-wave-gold: #ffc300;
+  --color-wave-cyan: #00f5d4;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #262626;
+  --card: #ffffff;
+  --card-foreground: #262626;
+  --popover: #ffffff;
+  --popover-foreground: #262626;
+  --primary: #003566;
+  --primary-foreground: #fcfcfc;
+  --secondary: #f7f7f7;
+  --secondary-foreground: #333333;
+  --muted: #f7f7f7;
+  --muted-foreground: #8a8a8a;
+  --accent: #00f5d4;
+  --accent-foreground: #000814;
+  --destructive: #ef4444;
+  --border: #ebebeb;
+  --input: #ebebeb;
+  --ring: #003566;
+  --chart-1: #f97316;
+  --chart-2: #3b82f6;
+  --chart-3: #10b981;
+  --chart-4: #eab308;
+  --chart-5: #6366f1;
+}
+
+.dark {
+  --background: #000814;
+  --foreground: #f8f9fa;
+  --card: #001d3d;
+  --card-foreground: #f8f9fa;
+  --popover: #001d3d;
+  --popover-foreground: #f8f9fa;
+  --primary: #003566;
+  --primary-foreground: #f8f9fa;
+  --secondary: #001d3d;
+  --secondary-foreground: #f8f9fa;
+  --muted: #001d3d;
+  --muted-foreground: #adb5bd;
+  --accent: #00f5d4;
+  --accent-foreground: #000814;
+  --destructive: #f87171;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #00f5d4;
+  --chart-1: #00f5d4;
+  --chart-2: #ffc300;
+  --chart-3: #003566;
+  --chart-4: #001d3d;
+  --chart-5: #000814;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-wave-cyan selection:text-wave-deep;
+  }
+}
+
+.wave-gradient {
+  background: linear-gradient(135deg, var(--color-wave-deep) 0%, var(--color-wave-blue) 50%, var(--color-wave-mid) 100%);
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
+
+/* Wallet Adapter Custom Styles */
+.wallet-adapter-button,
+.wallet-adapter-button-trigger {
+  background-color: var(--color-wave-cyan) !important;
+  color: var(--color-wave-deep) !important;
+  font-family: inherit !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  height: 32px !important;
+  min-height: 0 !important;
+  line-height: 32px !important;
+  padding: 0 16px !important;
+  font-size: 11px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.wallet-adapter-button:hover,
+.wallet-adapter-button-trigger:hover {
+  background-color: white !important;
+  transform: scale(1.02);
+}
+
+.wallet-adapter-modal-wrapper {
+  background: #000814 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2rem !important;
+  color: white !important;
+}
+
+.wallet-adapter-modal-button-close {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.wallet-adapter-modal-title {
+  font-weight: 900 !important;
+  letter-spacing: -0.05em !important;
+  color: white !important;
+}
+
+.wallet-adapter-modal-list {
+  margin: 0 0 12px !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 12px 20px !important;
+  border-radius: 1rem !important;
+  margin-bottom: 8px !important;
+}
+
+  .wallet-adapter-modal-list .wallet-adapter-button:hover {
+    background: rgba(0, 245, 212, 0.1) !important;
+    border-color: #00f5d4 !important;
+  }
+
+  .wallet-adapter-modal-list .wallet-adapter-button-end-icon {
+    display: none !important;
+  }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111;
+  border-radius: 10px;
+  border: 2px solid #050505;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f5d4;
+  box-shadow: 0 0 10px #00f5d4;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #111 #050505;
+}
+
